@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    class Date {
+        day;
+        month;
+        year;
+
+
+        constructor(day, month, year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+
+        getDay() {
+            return this.day;
+        }
+        setDay(day) {
+            this.day = day;
+        }
+
+        getMonth() {
+            return this.month;
+        }
+        setMonth(month) {
+            this.month = month;
+        }
+
+        getYear() {
+            return this.year;
+        }
+        setYear(year) {
+            this.year = year;
+        }
+    }
+
+    let date1 = new Date(2,2,2007);
+    let date2 = new Date(30,11,2020);
+    console.log('Ngay hom nay la '+ date1.getDay());
+    console.log(date1.getMonth());
+    console.log(date1.getYear());
+    console.log(date2.getDay());
+    console.log(date2.getMonth());
+    console.log(date2.getYear());
+</script>
+
+
+</body>
+</html>
