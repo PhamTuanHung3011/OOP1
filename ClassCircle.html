@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    class Circle {
+        radius;
+        color;
+
+
+        constructor(radius, color) {
+            this.radius = radius**2*Math.PI;
+            this.color = color
+
+        }
+        getRadius() {
+            return this.radius;
+        }
+        setRadius(radius) {
+            this.radius = radius**2*Math.PI;
+        }
+
+        getColor() {
+            return this.color;
+        }
+        setColor(color) {
+            this.color = color;
+        }
+    }
+
+    let circle1 = new Circle(3, 'black');
+    let circle2 = new Circle(5, 'red');
+    console.log(circle1.getRadius());
+    console.log(circle1.getColor());
+    console.log('dien tich hinh tron '+circle2.getRadius());
+    console.log('mau sac hinh tron '+ circle2.getColor());
+</script>
+
+</body>
+</html>
