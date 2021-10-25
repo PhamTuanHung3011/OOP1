@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<label> <input id="input1" size="30" placeholder="Nhap so"></label>
+<button id="button1" type="button" onclick="showSNT()"> Show </button>
+
+
+<script>
+   let numBer = document.getElementById('input1').value;
+   let arr = [];
+    function showSNT(arr) {
+        for (let i = 2; i <= numBer; i++) {
+           for (let j = 0; j < Math.sqrt(i); j++){
+               let check = true;
+               if (i % j === 0){
+                   check= false;
+                   break;
+               }
+           } if (check){
+               arr.push(i);
+            }
+        }
+        return arr;
+    }
+
+   console.log(showSNT(arr))
+
+
+
+</script>
+</body>
+</html>
