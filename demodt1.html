@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    class Mobile {
+        name;
+        status;
+        battery = 1;
+        typingMess = [];
+        receiveMess = [];
+        sendMess = [];
+
+        constructor( status, name) {
+            this.status = status;
+            this.name = name;
+
+        }
+        switchMobile() {
+            if (this.battery === 0) {
+                this.status = false;
+            } else {
+                this.status = !this.status;
+            }
+
+        }
+        decreaseBattery() {
+            if (this.battery > 0 && this.status) {
+                this.battery--;
+            } else if (this.battery > 0) {
+                console.log('bat dien thoai len');
+            } else {
+                this.status = false;
+                this.battery = 0;
+            }
+
+        }
+        getBattery() {
+            return this.battery;
+        }
+        ChargeBattery(){
+            this.battery = 100;
+        }
+        getStatus() {
+            return this.status;
+        }
+
+        typingMessage(message) {
+            if (this.status) {
+                this.typingMess.push(message);
+            } else {
+                console.log('Bat dien thoai len');
+            }
+
+        }
+
+        getReceiveMess() {
+            return this.receiveMess;
+        }
+        getSendMess() {
+            return this.sendMess;
+        }
+
+        receiveMessage(mobile) {
+            if (this.status) {
+
+            }
+        }
+
+        seenMessage(mobile) {
+            if (this.status) {
+                mobile.receiveMess = this.typingMess;
+            }
+        }
+
+
+
+    }
+    let nokia = new Mobile(false, 'Nokia6300');
+    let Iphone = new Mobile(false, 'Iphone 13');
+    console.log(nokia.getBattery());
+    console.log(nokia.getStatus());
+    nokia.switchMobile();
+    nokia.decreaseBattery();
+    console.log(nokia.getBattery());
+    nokia.switchMobile();
+    nokia.decreaseBattery();
+    console.log(nokia.getBattery());
+    nokia.switchMobile();
+    nokia.decreaseBattery();
+    nokia.decreaseBattery();
+    console.log(nokia.getBattery());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

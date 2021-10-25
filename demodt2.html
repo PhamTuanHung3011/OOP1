@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    class Mobile {
+        trangthai;
+        pin = 100;
+        ten;
+        soantin = [];
+        daguitin = [];
+        danhantin = [];
+
+
+        constructor(trangthai, ten) {
+            this.trangthai = trangthai;
+            this.ten = ten;
+
+        }
+        switchMobile() {
+            if (this.pin === 0) {
+                this.trangthai = false;
+            } else {
+                this.trangthai = !this.trangthai;
+            }
+        }
+        getTrangThai() {
+            return this.trangthai;
+        }
+
+        decreasePin() {
+            if (this.pin > 0 && this.trangthai) {
+                this.pin --;
+            } else if (this.pin > 0){
+                console.log('bat dien thoai len');
+            } else {
+                this.trangthai = false;
+                this.pin = 0;
+            }
+
+        }
+        getPin() {
+            return this.pin;
+        }
+        sacPin() {
+            this.pin = 100;
+        }
+        soanTinNhan(message) {
+            if (this.trangthai){
+                this.soantin.push(message);
+            } else {
+                console.log('bat dien thoai len')
+            }
+            this.decreasePin();
+        }
+        getDaGuiTin() {
+            return this.daguitin;
+        }
+        setDaGuiTin(daguitin) {
+            this.daguitin = daguitin;
+        }
+
+        getDaNhanTin() {
+            return this.danhantin;
+        }
+        setDaNhanTin(danhantin) {
+            this.danhantin = danhantin;
+        }
+        getSoanTin() {
+            return this.soantin;
+        }
+        setSoanTin(soantin) {
+            this.soantin = soantin;
+        }
+
+
+        guiTinNhan(moblie) {
+            if (this.trangthai && moblie.trangthai) {
+                moblie.setDaNhanTin(this.getSoanTin());
+                this.setDaGuiTin(this.getSoanTin())
+                this.setSoanTin([]);
+            } else if (this.trangthai) {
+                this.setDaGuiTin(this.getSoanTin())
+                this.setSoanTin([]);
+            } else {
+                console.log('bat dien thoai len')
+            }
+            this.decreasePin();
+        }
+
+
+
+    }
+    let nokia = new Mobile(false, 'Nokia 6300');
+    let iphone = new Mobile(false, 'Iphone 13');
+    nokia.switchMobile();
+    nokia.soanTinNhan('hello');
+    // iphone.switchMobile();
+    // iphone.switchMobile();
+    // iphone.switchMobile();
+    nokia.guiTinNhan(iphone);
+    console.log(nokia.getSoanTin());
+    console.log(nokia.getDaGuiTin());
+    console.log(iphone.getDaNhanTin());
+    console.log(nokia.getPin())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
