@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    class Mobile {
+        name;
+        color;
+        brand;
+        price;
+
+
+        constructor(name, color) {
+            this.name = name;
+            this.color = color;
+        }
+
+        getName() {
+            return this.name;
+        }
+        setName(name) {
+            this.name = name;
+        }
+
+        getColor() {
+            return this.color;
+        }
+        setColor(color) {
+            this.color = color;
+        }
+        getBrand() {
+            return this.brand
+        }
+        setBrand(brand) {
+            this.brand = brand;
+        }
+
+        getPrice() {
+            return this.price
+        }
+        setPrice(price) {
+            this.price = price;
+        }
+    }
+    let Iphone = new Mobile('Iphone13', 'pink');
+    let Nokia = new Mobile('930sc', 'black');
+    console.log(Iphone.getName());
+    console.log(Iphone.getColor());
+    Iphone.setBrand('APPLE');
+    console.log(Iphone.getBrand());
+    console.log(Nokia.getName());
+    console.log(Nokia.getColor());
+    Nokia.setPrice('500000');
+    console.log(Nokia.getPrice());
+    Iphone.setPrice('123000000');
+    console.log(Iphone.getPrice());
+
+
+</script>
+
+
+
+</body>
+</html>
